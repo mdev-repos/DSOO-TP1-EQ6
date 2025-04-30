@@ -19,13 +19,6 @@ namespace BibliotecaApp.Model
             this.Dni = dni;
         }
 
-        public Lector(string nombre, string dni, List<Libro> libros)
-        {
-            this.nombre = nombre;
-            this.dni = dni;
-            this.libros = libros;
-        }
-
         public string CodLector { get => codLector; set => codLector = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Dni { get => dni; set => dni = value; }
