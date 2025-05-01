@@ -13,9 +13,8 @@ namespace BibliotecaApp.Model
         private string autor;
         private string editorial;
 
-        public Libro(string codLibro, string titulo, string autor, string editorial)
+        public Libro(string titulo, string autor, string editorial)
         {
-            this.CodLibro = codLibro;
             this.Titulo = titulo;
             this.Autor = autor;
             this.Editorial = editorial;

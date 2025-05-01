@@ -22,8 +22,13 @@ namespace BibliotecaApp.Model
 
         public Boolean AgregarLibro(String titulo, String autor, String editorial)
         {
+            Libro libro = new(titulo, autor, editorial);
+            libros.Add(libro);
+          
             return true;
+            
         }
+
 
         public Boolean AltaLector(String nombre, String dni)
         {
