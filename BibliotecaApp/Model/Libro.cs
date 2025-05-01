@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BibliotecaApp.Model
 {
-    internal class Libro
+    public class Libro
     {
         private string codLibro;
         private string titulo;

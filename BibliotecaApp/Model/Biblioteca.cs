@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BibliotecaApp.Model
 {
-    internal class Biblioteca
+    public class Biblioteca
     {
         private List<Libro> libros;
         private List<Lector> lectores;
@@ -32,12 +32,14 @@ namespace BibliotecaApp.Model
 
         public Boolean AltaLector(String nombre, String dni)
         {
+            Lector lector = new(nombre, dni);
+            lectores.Add(lector);
             return true;
         }
 
-        public Libro BuscarLibro(String titulo)
+        public Libro? BuscarLibro(String titulo)
         {
-            return libro;
+            return libros.FirstOrDefault(libro => libro.Titulo == titulo);
         }
 
         public Boolean EliminarLibro(String titulo)
