@@ -24,5 +24,11 @@ namespace BibliotecaApp.Model
         public string Titulo { get => titulo; set => titulo = value; }
         public string Autor { get => autor; set => autor = value; }
         public string Editorial { get => editorial; set => editorial = value; }
+
+        public override string ToString()
+        {
+            return "Titulo: " + titulo + ". Autor: " + autor + ". Editorial: " + editorial;
+        }
     }
+
 }

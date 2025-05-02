@@ -56,7 +56,7 @@ namespace BibliotecaApp.Model
 
         public void ListarLibros()
         {
-            
+            libros.ForEach(libro=> Console.WriteLine(libro));
         }
 
         public String PrestarLibro(String titulo, String dni)
