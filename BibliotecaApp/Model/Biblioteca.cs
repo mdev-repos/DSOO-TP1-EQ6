@@ -22,6 +22,7 @@ namespace BibliotecaApp.Model
 
         public Boolean AgregarLibro(String titulo, String autor, String editorial)
         {
+            //AGREGAR VALIDACION PARA QUE NO SE CARGEN 2 MAS LIBROS IGUALES
             Libro libro = new(titulo, autor, editorial);
             libros.Add(libro);
           
@@ -32,6 +33,7 @@ namespace BibliotecaApp.Model
 
         public Boolean AltaLector(String nombre, String dni)
         {
+            //AGREGAR VALIDACION PARA QUE NO SE CARGEN 2 O MAS LECTORES IGUALES
             Lector lector = new(nombre, dni);
             lectores.Add(lector);
             return true;
@@ -39,6 +41,7 @@ namespace BibliotecaApp.Model
 
         public Libro? BuscarLibro(String titulo)
         {
+            //AGREGAR METODO TOUPPER O TOLOWER PARA EVITAR ERRORES DE 'FORMATO'
             return libros.FirstOrDefault(libro => libro.Titulo == titulo);
         }
 
@@ -59,9 +62,37 @@ namespace BibliotecaApp.Model
             libros.ForEach(libro=> Console.WriteLine(libro));
         }
 
+        public Lector? BuscarLector(String dni)
+        {
+            return lectores.FirstOrDefault(lector => lector.Dni == dni);
+        }
+
         public String PrestarLibro(String titulo, String dni)
         {
-            return "";
+            Libro? libroRequerido = BuscarLibro(titulo);
+
+            if (libroRequerido == null)
+            {
+                return "LIBRO INEXISTENTE";
+            }
+
+            Lector? lectorRequerido = BuscarLector(dni);
+
+            if (lectorRequerido == null)
+            {
+                return "LECTOR INEXISTENTE";
+            }
+
+            if(lectorRequerido.Libros.Count > 2) 
+            {
+                return "TOPE DE PRESTAMO ALCAZADO";
+            }
+
+            //Prestamo exitoso
+            lectorRequerido.Libros.Add(libroRequerido);
+            libros.Remove(libroRequerido);
+
+            return "PRESTAMO EXITOSO";
         }
 
     }

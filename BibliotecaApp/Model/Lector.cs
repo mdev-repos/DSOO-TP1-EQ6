@@ -17,11 +17,17 @@ namespace BibliotecaApp.Model
         {
             this.Nombre = nombre;
             this.Dni = dni;
+            this.Libros = new List<Libro>();
         }
 
         public string CodLector { get => codLector; set => codLector = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Dni { get => dni; set => dni = value; }
-        internal List<Libro> Libros { get => libros; set => libros = value; }
+        public List<Libro> Libros { get => libros; set => libros = value; }
+
+        public override string ToString()
+        {
+            return "Nombre: " + nombre + ". DNI: " + dni;
+        }
     }
 }
