@@ -48,9 +48,10 @@ namespace BibliotecaApp.Model
         public Boolean EliminarLibro(String titulo)
         {
             Boolean respuesta = false;
-            if(BuscarLibro(titulo) != null)
+            Libro? libro = BuscarLibro(titulo);
+            if (libro != null)
             {
-                libros.RemoveAt(libros.FindIndex(libro => libro.Titulo == titulo));
+                libros.Remove(libro);
                 respuesta = true;
             }
             
