@@ -6,7 +6,7 @@ Console.WriteLine("*************************************************************
 Console.WriteLine("****************************************************** BIBLIOTECA 'EQUIPO 6' ******************************************************");
 Console.WriteLine("***********************************************************************************************************************************");
 Console.WriteLine(" ");
-Console.WriteLine("HAZ CLICK PARA IR PROBANDO LAS FUNCIONALIDADES DE LA BIBLIOTECA");
+Console.WriteLine("APRIETA UNA TECLA PARA IR PROBANDO LAS FUNCIONALIDADES DE LA BIBLIOTECA");
 Console.WriteLine(" ");
 Console.ReadKey();
 
