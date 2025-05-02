@@ -8,7 +8,6 @@ namespace BibliotecaApp.Model
 {
     public class Lector
     {
-        private string codLector;
         private string nombre;
         private string dni;
         private List<Libro> libros;
@@ -20,7 +19,6 @@ namespace BibliotecaApp.Model
             this.Libros = new List<Libro>();
         }
 
-        public string CodLector { get => codLector; set => codLector = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Dni { get => dni; set => dni = value; }
         public List<Libro> Libros { get => libros; set => libros = value; }

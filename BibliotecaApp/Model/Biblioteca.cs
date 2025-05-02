@@ -43,8 +43,7 @@ namespace BibliotecaApp.Model
 
         public Libro? BuscarLibro(String titulo)
         {
-            //AGREGAR METODO TOUPPER O TOLOWER PARA EVITAR ERRORES DE 'FORMATO'
-            return libros.FirstOrDefault(libro => libro.Titulo == titulo);
+            return libros.FirstOrDefault(libro => libro.Titulo.ToUpper() == titulo.ToUpper());
         }
 
         public Boolean EliminarLibro(String titulo)

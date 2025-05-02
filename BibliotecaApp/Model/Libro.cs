@@ -8,7 +8,6 @@ namespace BibliotecaApp.Model
 {
     public class Libro
     {
-        private string codLibro;
         private string titulo;
         private string autor;
         private string editorial;
@@ -20,7 +19,6 @@ namespace BibliotecaApp.Model
             this.Editorial = editorial;
         }
 
-        public string CodLibro { get => codLibro; set => codLibro = value; }
         public string Titulo { get => titulo; set => titulo = value; }
         public string Autor { get => autor; set => autor = value; }
         public string Editorial { get => editorial; set => editorial = value; }
