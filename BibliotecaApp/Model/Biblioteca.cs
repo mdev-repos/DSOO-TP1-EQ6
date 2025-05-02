@@ -22,21 +22,23 @@ namespace BibliotecaApp.Model
 
         public Boolean AgregarLibro(String titulo, String autor, String editorial)
         {
-            //AGREGAR VALIDACION PARA QUE NO SE CARGEN 2 MAS LIBROS IGUALES
             Libro libro = new(titulo, autor, editorial);
             libros.Add(libro);
           
             return true;
-            
         }
 
 
         public Boolean AltaLector(String nombre, String dni)
         {
-            //AGREGAR VALIDACION PARA QUE NO SE CARGEN 2 O MAS LECTORES IGUALES
-            Lector lector = new(nombre, dni);
-            lectores.Add(lector);
-            return true;
+            Boolean respuesta = false;
+            if (BuscarLector(dni) == null)
+            {
+                Lector lector = new(nombre, dni);
+                lectores.Add(lector);
+                respuesta = true;
+            }
+            return respuesta;
         }
 
         public Libro? BuscarLibro(String titulo)
